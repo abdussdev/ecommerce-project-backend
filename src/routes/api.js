@@ -1,7 +1,7 @@
 const express=require('express');
 const BrandController = require("../controllers/BrandController");
 const CategoryController = require("../controllers/CategoryController");
-// const ProductController = require("../controllers/ProductController");
+const ProductController = require("../controllers/ProductController");
 const UserController = require("../controllers/UserController");
 const ProfileController = require("../controllers/ProfileController");
 // const InvoiceController = require("../controllers/InvoiceController");
@@ -14,12 +14,12 @@ router.get('/brand-list', BrandController.brandList)
 router.get('/category-list', CategoryController.cetagoryList)
 
 // Product
-// router.get('/ListByCategory/:categoryID',ProductController.ListByCategory)
-// router.get('/ListBySmilier/:categoryID',ProductController.ListBySmilier)
-// router.get('/ListByBrand/:brandID',ProductController.ListByBrand)
-// router.get('/ListByRemark/:remark',ProductController.ListByRemark)
-// router.get('/SliderList',ProductController.SliderList)
-// router.get('/ListByKeyword/:keyword',ProductController.ListByKeyword)
+router.get('/list-by-category/:categoryID', ProductController.listByCategory)
+router.get('/list-by-smilier/:categoryID', ProductController.listBySmilier)
+router.get('/list-by-brand/:brandID', ProductController.listByBrand)
+router.get('/list-by-remark/:remark', ProductController.listByRemark)
+router.get('/slider-list', ProductController.sliderList)
+router.get('/list-by-keyword/:keyword', ProductController.listByKeyword)
 
 // router.get('/WishList',AuthVerification,ProductController.WishList)
 // router.post('/CreateWishList',AuthVerification,ProductController.CreateWishList)
